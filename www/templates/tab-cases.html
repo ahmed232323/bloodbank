@@ -1,0 +1,16 @@
+<ion-view view-title="الحالات">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="m_case in cases" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{m_case.face}}">
+        <h2>{{m_case.name}}</h2>
+        <p>{{m_case.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(m_case)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

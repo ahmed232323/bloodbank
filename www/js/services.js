@@ -1,10 +1,10 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
+.factory('Cases', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var chats = [{
+  var cases = [{
     id: 0,
     name: 'Ben Sparrow',
     lastText: 'You on your way?',
@@ -33,15 +33,15 @@ angular.module('starter.services', [])
 
   return {
     all: function() {
-      return chats;
+      return cases;
     },
     remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
+      cases.splice(cases.indexOf(chat), 1);
     },
     get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+      for (var i = 0; i < cases.length; i++) {
+        if (cases[i].id === parseInt(chatId)) {
+          return cases[i];
         }
       }
       return null;
@@ -52,11 +52,11 @@ angular.module('starter.services', [])
 /**
  * A simple example service that returns some data.
  */
-.factory('Friends', function() {
+.factory('Donaters', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var friends = [{
+  var donaters = [{
     id: 0,
     name: 'Ben Sparrow',
     notes: 'Enjoys drawing things',
@@ -86,11 +86,11 @@ angular.module('starter.services', [])
 
   return {
     all: function() {
-      return friends;
+      return donaters;
     },
     get: function(friendId) {
       // Simple index lookup
-      return friends[friendId];
+      return donaters[friendId];
     }
   }
 });
