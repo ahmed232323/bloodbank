@@ -1,0 +1,42 @@
+<!--
+This template loads for the 'tab.friend-detail' state (app.js)
+'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+The FriendsCtrl pulls data from the Friends service (service.js)
+The Friends service returns an array of friend data
+-->
+<ion-view view-title="تسجيل متبرع">
+    <ion-content class="padding">
+
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">اسم المتبرع</span>
+                <span class="input-label">يجب ان يكون الاسم بالعربية</span>
+                <input type="text" placeholder="زيد">
+            </label>
+            <div class="list">
+
+                <label class="item item-radio">
+                    <input type="radio" name="group">
+                    <div class="item-content">
+                        Go
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+
+            </div>
+            <label class="item item-input item-select">
+                <span class="input-label">
+                    فصيلة الدم
+                </span>
+                <select>
+                    <option>Blue</option>
+                    <option selected>Green</option>
+                    <option>Red</option>
+                </select>
+            </label>
+
+            
+        </div>
+
+    </ion-content>
+</ion-view>

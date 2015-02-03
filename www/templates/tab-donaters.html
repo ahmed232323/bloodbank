@@ -1,10 +1,18 @@
-<ion-view view-title="المتبرعين">
-  <ion-content>
-    <ion-list>
+<ion-view view-title="المتبرعين" animation="no-animation">
+  <ion-content animation="no-animation">
+      <a nav-direction="back" class="button button-block button-positive" href="#/tab/donaters/register">
+          تسجيل متبرع
+      </a>
+      <a nav-direction="back" class="button button-block button-positive">
+          تحديث بيانات متبرع
+      </a>
+
+<!--    <ion-list>
       <ion-item class="item-avatar" ng-repeat="friend in donaters" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
         <img ng-src="{{friend.face}}">
         <h2>{{friend.name}}</h2>
       </ion-item>
-    </ion-list>
+    </ion-list>-->
+
   </ion-content>
 </ion-view>

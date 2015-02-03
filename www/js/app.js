@@ -71,17 +71,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       url: '/donaters',
       views: {
         'tab-donaters': {
-          templateUrl: 'templates/tab-donaters.html',
-          controller: 'DonatersCtrl'
+          templateUrl: 'templates/tab-donaters.html'
         }
       }
     })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
+    .state('tab.donaters-reg', {
+      url: '/donaters/register',
       views: {
         'tab-donaters': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
+          templateUrl: 'templates/donaters-reg.html'
+//          controller: 'RegDonaterCtrl'
         }
       }
     })

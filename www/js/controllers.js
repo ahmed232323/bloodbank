@@ -1,5 +1,15 @@
 angular.module('starter.controllers', [])
 
+.controller('MyCtrl', function($scope, $ionicHistory ) {
+  $scope.myGoBack = function() {
+    $ionicHistory.nextViewOptions({
+        disableAnimate: true,
+//        disableBack: true
+    });
+    $ionicHistory.goBack();
+  };
+})
+
 .controller('HomeCtrl', function($scope) {})
 
 .controller('CasesCtrl', function($scope, Cases) {
@@ -17,9 +27,9 @@ angular.module('starter.controllers', [])
   $scope.donaters = Donaters.all();
 })
 
-.controller('FriendDetailCtrl', function($scope, $stateParams, Donaters) {
-  $scope.friend = Donaters.get($stateParams.friendId);
-})
+//.controller('RegDonaterCtrl', function($scope, $stateParams, Donaters) {
+////  $scope.friend = Donaters.get($stateParams.friendId);
+//})
 
 .controller('InfoCtrl', function($scope) {
   $scope.settings = {
