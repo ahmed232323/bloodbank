@@ -5,38 +5,89 @@ The FriendsCtrl pulls data from the Friends service (service.js)
 The Friends service returns an array of friend data
 -->
 <ion-view view-title="تسجيل متبرع">
-    <ion-content class="padding">
+    <ion-content>
+        <wizard hide-indicators="true" on-finish="finishedWizard()"> 
+            <wz-step title="Personal Info">
+                <h1>المعلومات الشخصية</h1>
+                <div class="list" >
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">اسم المتبرع - باللغة العربية</span>
+                        <input type="text" placeholder="زيد">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">العمر</span>
+                        <input type="text" placeholder="24">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">رقم الموبايل الرئيسي</span>
+                        <input type="text" placeholder="09" value="09">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">رقم الموبايل الاختياري</span>
+                        <input type="text" placeholder="09" value="">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">البريد الإلكتروني</span>
+                        <input type="text" placeholder="ahmed@gmail.com">
+                    </label>
+                </div>
 
-        <div class="list">
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">اسم المتبرع</span>
-                <span class="input-label">يجب ان يكون الاسم بالعربية</span>
-                <input type="text" placeholder="زيد">
-            </label>
-            <div class="list">
-
-                <label class="item item-radio">
-                    <input type="radio" name="group">
-                    <div class="item-content">
-                        Go
+                <div class="row">
+                    <div class="col">
+                        <!--<a class="button button-full icon-right  ion-chevron-right button-calm"  wz-previous >السابق</a>-->
                     </div>
-                    <i class="radio-icon ion-checkmark"></i>
-                </label>
+                    <div class="col">
+                        <a class="button button-full icon-left  ion-chevron-left button-calm"  wz-next >التالي</a>
+                    </div>
+                </div>
 
-            </div>
-            <label class="item item-input item-select">
-                <span class="input-label">
-                    فصيلة الدم
-                </span>
-                <select>
-                    <option>Blue</option>
-                    <option selected>Green</option>
-                    <option>Red</option>
-                </select>
-            </label>
+            </wz-step>
+            <wz-step title="blood type">
+                
+                <ion-scroll zooming="true" direction="xy" style="width: 100%; height: 400px">
+                    <h1>فصيلة الدم</h1>
+                    <div class="row">
+                        <div class="col col-50"><button class="button  button-positive padding button-block">A+</button></div>
+                        <div class="col col-50"><button class="button  button-calm padding button-block">A-</button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-50"><button class="button  button-balanced padding button-block">B+</button></div>
+                        <div class="col col-50"><button class="button  button-energized padding button-block">B-</button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-50"><button class="button  button-assertive padding button-block">AB+</button></div>
+                        <div class="col col-50"><button class="button  button-royal padding button-block">AB-</button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-50"><button class="button  button-dark padding button-block">O+</button></div>
+                        <div class="col col-50"><button class="button  button-positive padding button-block">O-</button></div>
+                    </div>
+                </ion-scroll>
 
-            
-        </div>
+                <div class="row">
+                    <div class="col">
+                        <a class="button button-full icon-right  ion-chevron-right button-calm"  wz-previous >السابق</a>
+                    </div>
+                    <div class="col">
+                        <a class="button button-full icon-left  ion-chevron-left button-calm"  wz-next >التالي</a>
+                    </div>
+                </div>
+
+            </wz-step>
+            <wz-step title="More steps">
+                <h1>المزيد من التفاصيل!</h1>
+                
+                <div class="row">
+                    <div class="col">
+                        <a class="button button-full icon-right  ion-chevron-right button-calm"  wz-previous >السابق</a>
+                    </div>
+                    <div class="col">
+                        <a class="button button-full icon-left  ion-chevron-left button-calm"  wz-next >التالي</a>
+                    </div>
+                </div>
+
+            </wz-step>
+        </wizard>
 
     </ion-content>
 </ion-view>
