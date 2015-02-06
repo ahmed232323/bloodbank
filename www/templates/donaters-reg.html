@@ -4,7 +4,7 @@ This template loads for the 'tab.friend-detail' state (app.js)
 The FriendsCtrl pulls data from the Friends service (service.js)
 The Friends service returns an array of friend data
 -->
-<ion-view view-title="تسجيل متبرع">
+<ion-view class="has-subfooter" view-title="تسجيل متبرع">
     <ion-content>
         <wizard hide-indicators="true" on-finish="finishedWizard()"> 
             <wz-step title="Personal Info">
@@ -16,78 +16,69 @@ The Friends service returns an array of friend data
                     </label>
                     <label class="item item-input item-stacked-label">
                         <span class="input-label">العمر</span>
-                        <input type="text" placeholder="24">
+                        <input type="number" placeholder="24">
                     </label>
                     <label class="item item-input item-stacked-label">
                         <span class="input-label">رقم الموبايل الرئيسي</span>
-                        <input type="text" placeholder="09" value="09">
+                        <input type="number" placeholder="09" value="09">
                     </label>
                     <label class="item item-input item-stacked-label">
                         <span class="input-label">رقم الموبايل الاختياري</span>
-                        <input type="text" placeholder="09" value="">
+                        <input type="number" placeholder="09" value="">
                     </label>
                     <label class="item item-input item-stacked-label">
                         <span class="input-label">البريد الإلكتروني</span>
-                        <input type="text" placeholder="ahmed@gmail.com">
+                        <input type="email" placeholder="name@gmail.com">
                     </label>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <!--<a class="button button-full icon-right  ion-chevron-right button-calm"  wz-previous >السابق</a>-->
-                    </div>
-                    <div class="col">
-                        <a class="button button-full icon-left  ion-chevron-left button-calm"  wz-next >التالي</a>
-                    </div>
                 </div>
 
             </wz-step>
             <wz-step title="blood type">
-                
-                <ion-scroll zooming="true" direction="xy" style="width: 100%; height: 400px">
-                    <h1>فصيلة الدم</h1>
-                    <div class="row">
-                        <div class="col col-50"><button class="button  button-positive padding button-block">A+</button></div>
-                        <div class="col col-50"><button class="button  button-calm padding button-block">A-</button></div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-50"><button class="button  button-balanced padding button-block">B+</button></div>
-                        <div class="col col-50"><button class="button  button-energized padding button-block">B-</button></div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-50"><button class="button  button-assertive padding button-block">AB+</button></div>
-                        <div class="col col-50"><button class="button  button-royal padding button-block">AB-</button></div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-50"><button class="button  button-dark padding button-block">O+</button></div>
-                        <div class="col col-50"><button class="button  button-positive padding button-block">O-</button></div>
-                    </div>
-                </ion-scroll>
 
+                <!--                <ion-scroll zooming="true" direction="xy" style="width: 100%; height: 400px">-->
+                <h1>فصيلة الدم</h1>
                 <div class="row">
-                    <div class="col">
-                        <a class="button button-full icon-right  ion-chevron-right button-calm"  wz-previous >السابق</a>
-                    </div>
-                    <div class="col">
-                        <a class="button button-full icon-left  ion-chevron-left button-calm"  wz-next >التالي</a>
-                    </div>
+                    <div class="col col-50"><button class="button  button-positive padding button-block">A+</button></div>
+                    <div class="col col-50"><button class="button  button-calm padding button-block">A-</button></div>
                 </div>
+                <div class="row">
+                    <div class="col col-50"><button class="button  button-balanced padding button-block">B+</button></div>
+                    <div class="col col-50"><button class="button  button-energized padding button-block">B-</button></div>
+                </div>
+                <div class="row">
+                    <div class="col col-50"><button class="button  button-assertive padding button-block">AB+</button></div>
+                    <div class="col col-50"><button class="button  button-royal padding button-block">AB-</button></div>
+                </div>
+                <div class="row">
+                    <div class="col col-50"><button class="button  button-dark padding button-block">O+</button></div>
+                    <div class="col col-50"><button class="button  button-positive padding button-block">O-</button></div>
+                </div>
+                <!--                </ion-scroll>-->
+
 
             </wz-step>
-            <wz-step title="More steps">
+            <wz-step>
                 <h1>المزيد من التفاصيل!</h1>
-                
-                <div class="row">
-                    <div class="col">
-                        <a class="button button-full icon-right  ion-chevron-right button-calm"  wz-previous >السابق</a>
-                    </div>
-                    <div class="col">
-                        <a class="button button-full icon-left  ion-chevron-left button-calm"  wz-next >التالي</a>
-                    </div>
+
+                <div class="list" >
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">اخر تاريخ تبرع</span>                        
+                            <input class="col"  type="date" ng-model="last_doanteion_date" />     
+                    </label>
+                    <button class="button button-full button-balanced icon-right ion-ios7-calendar-outline" ng-click="pick_date()">تغيير التاريخ</button>                    
+                    <br/>
                 </div>
 
             </wz-step>
         </wizard>
 
     </ion-content>
+
+    <div class="bar bar-footer">
+        <div class="button-bar">
+            <a class="button icon-right  ion-chevron-right button-calm" ng-click="wz_previous()" ng-hide="hide_prev">السابق</a>
+            <a class="button icon-left  ion-chevron-left button-calm" ng-click="wz_next()"  >التالي</a>
+
+        </div>
+    </div>
 </ion-view>

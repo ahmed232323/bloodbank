@@ -5,8 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 
-               'angular-underscore', 'mgo-angular-wizard'])
+angular.module('starter', ['ionic', 'starter.controllers', 
+    'starter.services', 'angular-underscore', 
+    'mgo-angular-wizard'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -79,17 +80,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services',
       url: '/donaters/register',
       views: {
         'tab-donaters': {
-          templateUrl: 'templates/donaters-reg.html'
-//          controller: 'RegDonaterCtrl'
-        }
-      }
-    })
-    .state('tab.donaters-reg2', {
-      url: '/donaters/register2',
-      views: {
-        'tab-donaters': {
-          templateUrl: 'templates/donaters-reg2.html'
-//          controller: 'RegDonaterCtrl'
+          templateUrl: 'templates/donaters-reg.html',
+          controller: 'RegDonaterCtrl'
         }
       }
     })

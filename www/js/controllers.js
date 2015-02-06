@@ -27,9 +27,32 @@ angular.module('starter.controllers', [])
   $scope.donaters = Donaters.all();
 })
 
-//.controller('RegDonaterCtrl', function($scope, $stateParams, Donaters) {
-////  $scope.friend = Donaters.get($stateParams.friendId);
-//})
+.controller('RegDonaterCtrl', function($scope, $stateParams, WizardHandler) {
+//  $scope.friend = Donaters.get($stateParams.friendId);
+    today = new Date();
+    $scope.last_doanteion_date = new Date();
+    $scope.hide_prev = true;
+    $scope.wz_next = function(){
+        WizardHandler.wizard().next();      
+        $scope.hide_prev = false;
+    };
+    $scope.wz_previous = function(){
+         WizardHandler.wizard().previous();
+         if(WizardHandler.wizard().currentStepNumber() === 1)
+             $scope.hide_prev = true;
+    };
+    $scope.pick_date = function(){
+        var options = {
+            date: $scope.last_doanteion_date,
+            mode: 'date'
+        };
+
+        datePicker.show(options, function (date) {
+//            alert("date result " + date);
+            $scope.last_doanteion_date = date;
+        });
+    };
+})
 
 .controller('InfoCtrl', function($scope) {
   $scope.settings = {
