@@ -8,16 +8,37 @@ The Friends service returns an array of friend data
     <ion-content>
         <wizard hide-indicators="true" on-finish="finishedWizard()"> 
             <wz-step title="Personal Info">
+
                 <h1>المعلومات الشخصية</h1>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">اسم المتبرع - باللغة العربية</span>
+                    <input type="text" placeholder="زيد">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">العمر</span>
+                    <input type="number" placeholder="24">
+                </label>
+
+                
+                <label class="item item-radio" style="margin-right: 200 ">
+                    <input type="radio" name="group"  checked="checked">
+                    <div class="item-content">
+                        ذكر
+                    </div>
+                    <i class="radio-icon ion-male"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="group" value="true">
+                    <div class="item-content">
+                        انثى
+                    </div>
+                    <i class="radio-icon ion-female"></i>
+                </label>
+
+            </wz-step>
+            <wz-step>
+                <h1>المعلومات الاتصال</h1>
                 <div class="list" >
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">اسم المتبرع - باللغة العربية</span>
-                        <input type="text" placeholder="زيد">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">العمر</span>
-                        <input type="number" placeholder="24">
-                    </label>
                     <label class="item item-input item-stacked-label">
                         <span class="input-label">رقم الموبايل الرئيسي</span>
                         <input type="number" placeholder="09" value="09">
@@ -31,11 +52,9 @@ The Friends service returns an array of friend data
                         <input type="email" placeholder="name@gmail.com">
                     </label>
                 </div>
-
             </wz-step>
             <wz-step title="blood type">
 
-                <!--                <ion-scroll zooming="true" direction="xy" style="width: 100%; height: 400px">-->
                 <h1>فصيلة الدم</h1>
                 <div class="row">
                     <div class="col col-50"><button class="button  button-positive padding button-block">A+</button></div>
@@ -53,21 +72,118 @@ The Friends service returns an array of friend data
                     <div class="col col-50"><button class="button  button-dark padding button-block">O+</button></div>
                     <div class="col col-50"><button class="button  button-positive padding button-block">O-</button></div>
                 </div>
-                <!--                </ion-scroll>-->
 
 
             </wz-step>
-            <wz-step>
-                <h1>المزيد من التفاصيل!</h1>
-
-                <div class="list" >
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">اخر تاريخ تبرع</span>                        
-                            <input class="col"  type="date" ng-model="last_doanteion_date" />     
-                    </label>
-                    <button class="button button-full button-balanced icon-right ion-ios7-calendar-outline" ng-click="pick_date()">تغيير التاريخ</button>                    
-                    <br/>
+             
+            <wz-step dir="rtl">
+                <h2>اختر اقرب المستشفيات</h2>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        الولاية
+                    </div>
+                    <select>
+                        <option selected>اختر الولاية</option>
+                        <option>الشمالية</option>
+                        <option>نهر النيل</option>
+                        <option>البحر الاحمر</option>
+                        <option>شمال دارفور</option>
+                        <option>شمال كردفان </option>
+                        <option>الخرطوم</option>
+                        <option>كسلا</option>
+                        <option>النيل الابيض</option>
+                        <option>الجزيرة</option>
+                        <option>القضارف</option>
+                        <option>غرب دارفور</option>
+                        <option>سنار</option>
+                        <option>جنوب دارفور</option>
+                        <option>جنوب كردفان</option>
+                        <option>النيل الازرق</option>
+                        <option>شرف دارفور</option>
+                        <option>وسط دارفور</option>
+                    </select>
+                </label>
+                
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        المحلية
+                    </div>
+                    <select>
+                        <option> اختر المحلية</option>
+                        <option value="أمبدة">أمبدة</option>
+                        <option value="كرري">كرري</option>
+                        <option value="الخرطوم">الخرطوم</option>
+                        <option value="بحري">بحري</option>
+                        <option value="شرق النيل">شرق النيل</option>
+                        <option value="جبل أولياء">جبل أولياء</option>
+                        <option value="أم درمان">أم درمان</option>
+                    </select>
+                </label>
+                
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        اقرب مستشفى
+                    </div>
+                    <select>
+                        <option>الخرطوم التعليمي</option>
+                        <option>الشعب التعليمي</option>
+                        <option>الذرة</option>
+                        <option>ابن سينا</option>
+                        <option>سوبا</option>
+                        <option>الشرطة</option>
+                        <option>إبراهيم مالك</option>
+                        <option>بشائر</option>
+                        <option>التركي</option>
+                        <option>المعمل القومي (استاك)</option>
+                        <option>جابر ابو العز</option>
+                    </select>
+                </label>
+                <br/>
+                
+                <div dir="ltr">
+                    <button style="margin-left: 10px" class="button button-positive icon-right ion-ios7-plus-outline">اضافة المستشفى</button>
                 </div>
+                    
+            </wz-step>
+            
+            <wz-step>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">اخر تاريخ للتبرع</span>                        
+                    <input  type="date" ng-model="last_doanteion_date" />     
+                </label>
+                <button class="button button-full button-balanced icon-right ion-ios7-calendar-outline" ng-click="pick_date()">تغيير التاريخ</button>                    
+                
+                <li class="item item-checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" checked="checked">
+                    </label>
+                    استقبال جميع الحالات 
+                </li>
+                
+                <h5>اختر الوقت المناسب للإتصال بك عند التسجيل</h5>
+                <label class="item item-radio" style="margin-right: 200 ">
+                    <input type="radio" name="group"  checked="checked">
+                    <div class="item-content">
+                       الاتصال في اي وقت
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio" style="margin-right: 200 ">
+                    <input type="radio" name="group">
+                    <div class="item-content">
+                        في الفترة الصباحية
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio" style="margin-right: 200 ">
+                    <input type="radio" name="group">
+                    <div class="item-content">
+                       في الفترة المسائية
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                
 
             </wz-step>
         </wizard>

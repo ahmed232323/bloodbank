@@ -41,6 +41,7 @@ angular.module('starter.controllers', [])
          if(WizardHandler.wizard().currentStepNumber() === 1)
              $scope.hide_prev = true;
     };
+
     $scope.pick_date = function(){
         var options = {
             date: $scope.last_doanteion_date,
@@ -49,7 +50,10 @@ angular.module('starter.controllers', [])
 
         datePicker.show(options, function (date) {
 //            alert("date result " + date);
-            $scope.last_doanteion_date = date;
+            $scope.$apply(function () {
+                $scope.last_doanteion_date = date;
+                }
+            )
         });
     };
 })
